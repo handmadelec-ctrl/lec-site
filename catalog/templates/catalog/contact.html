@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | LEC{% endblock %}
+
+{% block content %}
+<section class="page contact-page">
+    <div class="container">
+        <header class="page-header">
+            <h1>Contact</h1>
+            <p>
+                Ready to order? This page is designed to make it easy—choose WhatsApp for fast orders
+                or Email for collaborations and detailed requests.
+            </p>
+        </header>
+
+        <div class="contact-grid">
+            <!-- WhatsApp -->
+            <div class="card card--accent">
+                <h2>WhatsApp</h2>
+                <p class="muted">Fast response for orders and product questions.</p>
+
+                <div class="contact-checklist">
+                    <p class="small-title">To place an order, please include:</p>
+                    <ul>
+                        <li><strong>Product name</strong> (or a screenshot)</li>
+                        <li><strong>Color preference</strong> (if applicable)</li>
+                        <li><strong>Shipping city + state</strong></li>
+                        <li><strong>Deadline</strong> (if it’s a gift)</li>
+                    </ul>
+                </div>
+
+                <!-- WhatsApp message pre-filled (edit the text freely) -->
+                <a class="btn btn-primary"
+                    href="https://wa.me/18453921158?text=Hi%20LEC!%20I%20want%20to%20place%20an%20order.%0A%0AProduct%3A%20%5BWrite%20product%20name%20or%20paste%20link%5D%0AColor%3A%20%5Boptional%5D%0AShipping%20City%2C%20State%3A%20%5Bwrite%5D%0ADeadline%3A%20%5Boptional%5D%0A%0AThank%20you!"
+                    target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+                    Chat on WhatsApp
+                </a>
+
+                <p class="note muted">
+                    Tip: If you’re coming from a product page, copy the product link and paste it in WhatsApp.
+                </p>
+            </div>
+
+            <!-- Email -->
+            <div class="card">
+                <h2>Email</h2>
+                <p class="muted">For collaborations or detailed requests.</p>
+
+                <p><strong class="mono">handmadelec@gmail.com</strong></p>
+
+                <a class="btn btn-secondary"
+                    href="mailto:handmadelec@gmail.com?subject=Order Inquiry LEC&body=Hi, I'm interested in one of your bags."
+                    aria-label="Send Email">
+                    Email Us
+                </a>
+
+                <p class="note muted">
+                    Response time: typically within 24–48 hours.
+                </p>
+            </div>
+        </div>
+
+        <!-- How ordering works -->
+        <div class="contact-bottom">
+            <div class="card">
+                <h2>How ordering works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <span class="step-num">1</span>
+                        <div>
+                            <strong>Choose your bag</strong>
+                            <p class="muted">Pick a product from the catalog (or send a screenshot).</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">2</span>
+                        <div>
+                            <strong>Confirm details</strong>
+                            <p class="muted">We confirm availability, shipping, and total price.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">3</span>
+                        <div>
+                            <strong>Payment & shipping</strong>
+                            <p class="muted">We finalize payment and send tracking once shipped.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Quick FAQ</h2>
+                <div class="faq">
+                    <div class="faq-item">
+                        <strong>Do you restock sold-out bags?</strong>
+                        <p class="muted">
+                            Some pieces are limited. If an item is sold out, message us on WhatsApp and we’ll confirm
+                            availability or similar options.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <strong>Are measurements exact?</strong>
+                        <p class="muted">
+                            Measurements are approximate. Small variations and subtle handmade details are part of the
+                            artisan character of each piece and should not be considered defects.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <strong>How long does delivery take?</strong>
+                        <p class="muted">
+                            Delivery time depends on your location and shipping carrier. We’ll confirm the estimated
+                            delivery window after you share your shipping city and state.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

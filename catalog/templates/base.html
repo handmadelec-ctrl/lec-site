@@ -1,0 +1,48 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}LEC | Handmade Artisan Bags{% endblock %}</title>
+    <!-- Fonts (Premium) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <header class="lec-header">
+        <div class="lec-container lec-header-inner">
+            <a class="lec-brand" href="{% url 'home' %}">
+                <!-- Si tienes logo, ajusta la ruta según tu static -->
+                <img class="lec-logo" src="{% static 'images/logo_videos.png' %}" alt="LEC">
+                <span class="lec-brand-text">LEC</span>
+            </a>
+
+            <nav class="lec-nav">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'catalog' %}">Catalog</a>
+                <a href="{% url 'contact' %}">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="lec-main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="lec-footer">
+        <div class="lec-container">
+            <p>© {% now "Y" %} LEC – Handmade Artisan Bags</p>
+        </div>
+    </footer>
+</body>
+
+</html>

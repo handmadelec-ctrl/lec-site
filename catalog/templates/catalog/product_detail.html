@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container" style="padding:24px 0;">
+
+  <p style="margin-bottom:20px;">
+    <a href="/catalog/" style="text-decoration:none;">← Back to catalog</a>
+  </p>
+
+  <div class="product-detail">
+
+    <!-- LEFT COLUMN -->
+    <div class="product-gallery">
+
+      <div class="main-image-card">
+        {% if product.image %}
+        <img id="mainImage" src="{{ product.image.url }}" alt="{{ product.name }}" class="product-main-image">
+        {% else %}
+        <div style="padding:60px; text-align:center;">
+          No image available.
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Thumbnails -->
+      <div class="product-thumbs">
+        {% if product.image %}
+        <button type="button" onclick="swapImage('{{ product.image.url }}', this)" class="thumb-btn active">
+          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="thumb-img">
+        </button>
+        {% endif %}
+
+        {% for img in product.images.all %}
+        <button type="button" onclick="swapImage('{{ img.image.url }}', this)" class="thumb-btn">
+          <img src="{{ img.image.url }}" alt="{{ img.alt_text|default:product.name }}" class="thumb-img">
+        </button>
+        {% endfor %}
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="product-info">
+      <h1>{{ product.name }}</h1>
+      <p class="price">${{ product.price }}</p>
+      {% if whatsapp_number %}
+      <a class="btn-whatsapp" target="_blank"
+        href="https://wa.me/{{ whatsapp_number }}?text=Hi%20LEC!%20I%20want%20to%20place%20an%20order.%0A%0AProduct:%20{{ product.name|urlencode }}%0AID:%20{{ product.id }}%0ALink:%20{{ request.build_absolute_uri|urlencode }}%0AShipping%20City,%20State:%20%0ADeadline%20(optional):%20%0A%0AThank%20you!">
+        WhatsApp (Quick Order)
+      </a>
+      {% endif %}
+
+
+
+      {% if product.description_en %}
+      <div class="product-description">
+        {{ product.description_en|linebreaks }}
+      </div>
+      {% endif %}
+
+      {% if product.description_es %}
+      <div class="divider-gradient"></div>
+
+      <div class="product-description">
+        {{ product.description_es|linebreaks }}
+      </div>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function swapImage(url, btn) {
+    const main = document.getElementById('mainImage');
+    if (!main) return;
+
+    main.src = url;
+
+    document.querySelectorAll('.thumb-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+  }
+</script>
+
+{% endblock %}
