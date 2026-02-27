@@ -21,3 +21,7 @@ staticfiles/
 
 # Env variables
 .env
+# Media heavy files (videos)
+static/video/*.mp4
+static/videos/*.mp4
+*.mp4
