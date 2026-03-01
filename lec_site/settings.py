@@ -1,3 +1,4 @@
+import cloudinary
 from django.contrib.auth import get_user_model
 import os
 from pathlib import Path
@@ -33,6 +34,12 @@ INSTALLED_APPS = [
 # ==============================
 # CLOUDINARY (MEDIA in production)
 # ==============================
+
+cloudinary.config(
+    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.environ.get("CLOUDINARY_API_KEY"),
+    api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
+)
 CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL", "")
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
@@ -113,6 +120,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # MEDIA UPLOADS
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
 # CLOUDINARY (MEDIA STORAGE)
 CLOUDINARY_STORAGE = {
     "CLOUD_NAME": os.environ.get("CLOUDINARY_CLOUD_NAME", ""),
