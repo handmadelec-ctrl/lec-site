@@ -1832,3 +1832,57 @@ LEC FIX – CATALOG BUTTON ALIGNMENT (REAL FIX)
   }
 
 }
+
+.lec-footer .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 10px 0 6px;
+}
+
+.lec-footer .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #f3f3f3;
+  color: #333;
+  text-decoration: none;
+}
+
+.lec-footer .social-links a i {
+  font-size: 18px;
+}
+
+.lec-footer .social-links a:hover {
+  background: linear-gradient(90deg, #ff2c7d, #7b2cff, #2c7dff);
+  color: #fff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+/* --- LEC Footer Social Buttons (FINAL OVERRIDE) --- */
+.lec-footer .lec-container .social-links a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 999px !important;
+  background: #f3f3f3 !important;
+  color: #333 !important;
+  text-decoration: none !important;
+}
+
+.lec-footer .lec-container .social-links a i {
+  font-size: 18px !important;
+}
+
+.lec-footer .lec-container .social-links a:hover {
+  background: linear-gradient(90deg, #ff2c7d, #7b2cff, #2c7dff) !important;
+  color: #fff !important;
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18) !important;
+}
